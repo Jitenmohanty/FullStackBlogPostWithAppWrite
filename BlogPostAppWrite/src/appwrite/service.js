@@ -90,6 +90,34 @@ export class Service {
       console.log("Appwrite serive :: getPosts :: error", error);
     }
   }
+
+  //Storage Related Controller Functions...
+
+  async uploadFile(file) {
+    try {
+      return await this.bucket.createFile(
+        config.appwriteBucketId,
+        ID.unique(),
+        file
+      );
+    } catch (error) {
+      console.log("Appwrite serive :: uploadFile :: error", error);
+    }
+  }
+
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(config.appwriteBucketId, fileId);
+      return true;
+    } catch (error) {
+      console.log("Appwrite serive :: delPost :: error", error);
+      return false;
+    }
+  }
+
+  filePreview(fileId) {
+    return this.bucket.getFilePreview(config.appwriteBucketId, fileId);
+  }
 }
 
 const service = new Service();
