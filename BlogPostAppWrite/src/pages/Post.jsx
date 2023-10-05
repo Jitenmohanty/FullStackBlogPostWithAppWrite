@@ -5,12 +5,13 @@ import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
-const Post = () => {
+export default function Post() {
   const [post, setPost] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.auth.userData);
 
+  const userData = useSelector((state) => state.auth.userData);
+console.log(userData)
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
   useEffect(() => {
@@ -19,9 +20,7 @@ const Post = () => {
         if (post) setPost(post);
         else navigate("/");
       });
-    } else {
-      navigate("/");
-    }
+    } else navigate("/");
   }, [slug, navigate]);
 
   const deletePost = () => {
@@ -63,6 +62,4 @@ const Post = () => {
       </Container>
     </div>
   ) : null;
-};
-
-export default Post;
+}

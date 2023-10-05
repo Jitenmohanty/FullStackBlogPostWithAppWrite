@@ -16,8 +16,14 @@ const SignUp = () => {
     setError("");
     try {
       const userData = await authService.createAccount(data);
-      if (userData) dispatch(login(userData));
-      navigate("/");
+      if (userData) {
+        const userData = await authService.getCurrentUser();
+        if (userData) {
+          dispatch(login(userData));
+        }
+
+        navigate("/");
+      }
     } catch (error) {
       setError(error.message);
     }
@@ -66,7 +72,7 @@ const SignUp = () => {
                   matchPatern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid address",
-                }
+                },
               })}
             />
             <Input

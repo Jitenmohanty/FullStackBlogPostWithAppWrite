@@ -3,8 +3,8 @@ import "./App.css";
 import authService from "./appwrite/auth";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./store/authSlice";
-import {Header, Footer } from "./components";
-import {Outlet} from 'react-router-dom'
+import { Header, Footer } from "./components";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,14 +15,13 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
+          console.log(userData)
           dispatch(login(userData));
         } else {
           dispatch(logout());
         }
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   }, []);
 
   return !loading ? (
@@ -30,7 +29,7 @@ function App() {
       <div className="w-full block">
         <Header />
         <main>
-          TODO: <Outlet/>
+          TODO: <Outlet />
         </main>
         <Footer />
       </div>
