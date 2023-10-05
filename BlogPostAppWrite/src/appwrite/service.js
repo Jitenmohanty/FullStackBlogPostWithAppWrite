@@ -16,7 +16,7 @@ export class Service {
 
   //Get The Post Like-----> All CURD Operations.
 
-  async createPost({ title, slug, content, featureImage, status, userId }) {
+  async createPost({ title, slug, content, featuredImage, status, userId }) {
     try {
       return await this.databases.createDocument(
         config.appwriteDatabaseId,
@@ -25,7 +25,7 @@ export class Service {
         {
           title,
           content,
-          featureImage,
+          featuredImage,
           status,
           userId,
         }
@@ -35,7 +35,7 @@ export class Service {
     }
   }
 
-  async updatePost(slug, { title, content, status, featureImage }) {
+  async updatePost(slug, { title, content, status, featuredImage }) {
     try {
       return await this.databases.updateDocument(
         config.appwriteDatabaseId,
@@ -45,7 +45,7 @@ export class Service {
           title,
           content,
           status,
-          featureImage,
+          featuredImage,
         }
       );
     } catch (error) {
@@ -76,6 +76,7 @@ export class Service {
       );
     } catch (error) {
       console.log("Appwrite serive :: getPost :: error", error);
+      return false;
     }
   }
 
@@ -84,10 +85,11 @@ export class Service {
       return await this.databases.listDocuments(
         config.appwriteDatabaseId,
         config.appwriteCollectionId,
-        queries
+        queries,
       );
     } catch (error) {
       console.log("Appwrite serive :: getPosts :: error", error);
+      return false;
     }
   }
 
@@ -102,6 +104,7 @@ export class Service {
       );
     } catch (error) {
       console.log("Appwrite serive :: uploadFile :: error", error);
+      return false;
     }
   }
 

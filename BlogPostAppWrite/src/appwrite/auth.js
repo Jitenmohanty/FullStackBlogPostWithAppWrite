@@ -13,7 +13,7 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
-  async createAccount() {
+  async createAccount({email,password,name}) {
     const userAccount = await this.account.create(
       ID.unique(),
       email,
@@ -45,6 +45,7 @@ export class AuthService {
     } catch (error) {
       console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
+    return null;
   }
 
   async logout() {

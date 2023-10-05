@@ -10,7 +10,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { handleSubmit, register } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const createNewAccount = async (data) => {
     setError("");
@@ -66,7 +66,7 @@ const SignUp = () => {
                   matchPatern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid address",
-                },
+                }
               })}
             />
             <Input

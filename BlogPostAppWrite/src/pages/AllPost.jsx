@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import appWriteService from "../appwrite/service";
-import { useNavigate } from "react-router-dom";
+import { Container,PostCard } from "../components";
 
 const AllPost = () => {
   const [posts, setPosts] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {}, []);
   appWriteService.getPosts([]).then((posts) => {
