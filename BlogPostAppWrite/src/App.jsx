@@ -15,7 +15,6 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
-          // console.log(userData)
           dispatch(login({userData}));
         } else {
           dispatch(logout());
@@ -25,15 +24,17 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between gredient">
-      <div className="w-full block">
+    // <div className="min-h-screen flex flex-wrap content-between gredient">
+      // <div className="w-full block">
+      <>
         <Header />
         <main>
          <Outlet />
         </main>
         <Footer />
-      </div>
-    </div>
+      </>
+      // </div>
+    // </div>
   ) : null;
 }
 

@@ -13,7 +13,7 @@ function Footer() {
                 <Logo width="100px" />
               </div>
               <div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-yellow-300">
                   &copy; Copyright 2023. All Rights Reserved by DevUI.
                 </p>
               </div>
@@ -21,7 +21,7 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
                 Company
               </h3>
               <ul>
@@ -62,7 +62,7 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-2/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
                 Support
               </h3>
               <ul>
@@ -103,7 +103,7 @@ function Footer() {
           </div>
           <div className="w-full p-6 md:w-1/2 lg:w-3/12">
             <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
                 Legals
               </h3>
               <ul>

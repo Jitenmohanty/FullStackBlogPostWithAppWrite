@@ -32,32 +32,40 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8">
+    <div className="py-8 ">
       <Container>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-          <img
-            src={appwriteService.getFilePreview(post.featuredImage)}
-            alt={post.title}
-            className="rounded-xl"
-          />
+      <div className="w-full flex flex-col md:flex-row justify-end mb-4 border rounded-xl p-2 shadow-md bg-amber-400 overflow-x-auto">
+      <div className="will-change-auto md:w-48 sm:mr-8 relative">
+        <img
+          src={appwriteService.getFilePreview(post.featuredImage)}
+          alt={post.title}
+          className="rounded-t-xl md:rounded-xl w-48 h-48 md:h-auto object-cover"
+        />
+        {isAuthor && (
+          <div className="absolute top-2 right-2 md:static md:mt-2">
+            <Link to={`/edit-post/${post.$id}`}>
+              <button className="mr-3 bg-green-500 text-white px-2 py-1 rounded">
+                Edit
+              </button>
+            </Link>
+            <button
+              className="bg-red-500 text-white px-2 py-1 rounded"
+              onClick={deletePost}
+            >
+              Delete
+            </button>
+          </div>
+        )}
+      </div>
 
-          {isAuthor && (
-            <div className="absolute right-6 top-6">
-              <Link to={`/edit-post/${post.$id}`}>
-                <Button bgColor="bg-green-500" className="mr-3">
-                  Edit
-                </Button>
-              </Link>
-              <Button bgColor="bg-red-500" onClick={deletePost}>
-                Delete
-              </Button>
-            </div>
-          )}
-        </div>
-        <div className="w-full mb-6">
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-        </div>
-        <div className="browser-css">{parse(post.content)}</div>
+      <div className="w-full mt-4  md:mt-0 overflow-x-auto">
+        <h1 className="text-xl md:text-2xl font-bold mb-2">{post.title}</h1>
+        <div
+          className="browser-css overflow-x-auto"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      </div>
+    </div>
       </Container>
     </div>
   ) : null;
