@@ -24,8 +24,6 @@ function App() {
   }, []);
 
   return !loading ? (
-    // <div className="min-h-screen flex flex-wrap content-between gredient">
-      // <div className="w-full block">
       <>
         <Header />
         <main>
@@ -33,8 +31,6 @@ function App() {
         </main>
         <Footer />
       </>
-      // </div>
-    // </div>
   ) : null;
 }
 

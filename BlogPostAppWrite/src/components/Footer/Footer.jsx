@@ -1,143 +1,47 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Logo from "../Logo";
+import './footer.scss';
+import {
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 
-function Footer() {
+const Footer = () => {
   return (
-    <section className="relative overflow-hidden py-10 border border-t-2 border-t-black gredient">
-      <div className="relative z-10 mx-auto max-w-7xl px-4">
-        <div className="-m-6 flex flex-wrap">
-          <div className="w-full p-6 md:w-1/2 lg:w-5/12">
-            <div className="flex h-full flex-col justify-between">
-              <div className="mb-4 inline-flex items-center">
-                <Logo width="100px" />
-              </div>
-              <div>
-                <p className="text-sm text-yellow-300">
-                  &copy; Copyright 2023. All Rights Reserved by DevUI.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
-                Company
-              </h3>
-              <ul>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Features
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Affiliate Program
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Press Kit
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-2/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
-                Support
-              </h3>
-              <ul>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Account
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Help
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Customer Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="w-full p-6 md:w-1/2 lg:w-3/12">
-            <div className="h-full">
-              <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-yellow-300">
-                Legals
-              </h3>
-              <ul>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Terms &amp; Conditions
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                    to="/"
-                  >
-                    Licensing
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <footer>
+      <div>
+        <img
+          src={
+            "https://avatars.githubusercontent.com/u/105143946?s=400&u=09e5f14cf00fdfc27ddb1a2dc78665b92ceba4f1&v=4"
+          }
+          alt="Founder"
+        />
+
+        <h2>Jiten Mohanty</h2>
+        <p>Motivation is temporary, but discipline last forever.</p>
       </div>
-    </section>
+
+      <aside>
+        <h2>Social Media</h2>
+
+        <article>
+          <a href="https://www.linkedin.com/in/jiten-mohanty/" target={"blank"}>
+            <AiFillLinkedin style={{backgroundColor:'blue'}}/>
+          </a>
+          <a href="https://instagram.com/jitujitenmohanty"  target={"blank"}>
+            <AiFillInstagram style={{backgroundColor:'#fa058c',height:'32px',marginLeft:"5px",marginRight:"5px"}}/>
+          </a>
+          <a href="https://github.com/jitenmohanty" target={"blank"}>
+            <AiFillGithub />
+          </a>
+        </article>
+      </aside>
+      <a href="#home">
+        <AiOutlineArrowUp />
+      </a>
+    </footer>
   );
-}
+};
 
 export default Footer;

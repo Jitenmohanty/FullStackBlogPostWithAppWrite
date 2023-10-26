@@ -51,7 +51,7 @@ function Header() {
                 <li key={item.name}>
                   <button
                     onClick={() => navigate(item.slug)}
-                    className="inline-bock px-4 py-2 duration-200 text-yellow-50 font-bold hover:bg-black rounded-full "
+                    className="inline-bock px-4 py-3 duration-200 text-yellow-50 font-bold hover:bg-black rounded-full "
                   >
                     {item.name}
                   </button>
