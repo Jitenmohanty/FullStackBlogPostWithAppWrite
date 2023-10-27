@@ -40,7 +40,7 @@ function Header() {
     <header className=" shadow gredient2">
       <Container>
         <nav className="flex pt-1 ">
-          <div className="mr-4">
+          <div className=" hidden sm:block ">
             <Link to="/">
               <Logo  width="50px" />
             </Link>
