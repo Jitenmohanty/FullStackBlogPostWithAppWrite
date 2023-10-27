@@ -1,5 +1,5 @@
 import React from "react";
-import './footer.scss';
+import "./footer.scss";
 import {
   AiFillGithub,
   AiFillInstagram,
@@ -10,6 +10,15 @@ import {
 const Footer = () => {
   return (
     <footer>
+      <main>
+        <a href="#home">
+          <AiOutlineArrowUp />
+        </a>
+        <p className="text-sm text-gray-600">
+          &copy; Copyright 2023. All Rights Reserved by DevUI.
+        </p>
+      </main>
+
       <div>
         <img
           src={
@@ -27,19 +36,23 @@ const Footer = () => {
 
         <article>
           <a href="https://www.linkedin.com/in/jiten-mohanty/" target={"blank"}>
-            <AiFillLinkedin style={{backgroundColor:'blue'}}/>
+            <AiFillLinkedin style={{ backgroundColor: "blue" }} />
           </a>
-          <a href="https://instagram.com/jitujitenmohanty"  target={"blank"}>
-            <AiFillInstagram style={{backgroundColor:'#fa058c',height:'32px',marginLeft:"5px",marginRight:"5px"}}/>
+          <a href="https://instagram.com/jitujitenmohanty" target={"blank"}>
+            <AiFillInstagram
+              style={{
+                backgroundColor: "#fa058c",
+                height: "32px",
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            />
           </a>
           <a href="https://github.com/jitenmohanty" target={"blank"}>
             <AiFillGithub />
           </a>
         </article>
       </aside>
-      <a href="#home">
-        <AiOutlineArrowUp />
-      </a>
     </footer>
   );
 };
