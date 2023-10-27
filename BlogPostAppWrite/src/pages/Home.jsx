@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/service";
 import { Container, PostCard } from "../components";
+import "../App.css"
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -15,12 +16,12 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 mt-4 text-center gredient">
+      <div className="w-full height2 py-8 mt-4 text-center gredient ">
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
               <h1 className="text-2xl font-bold ">
-                Nothing added Inside Post
+              Posts are Loading....
               </h1>
             </div>
           </div>
@@ -29,7 +30,7 @@ function Home() {
     );
   }
   return (
-    <div className="w-full py-8">
+    <div className=" w-full  py-8 ">
       <Container>
         <div className="flex flex-wrap">
           {posts.map((post) => (

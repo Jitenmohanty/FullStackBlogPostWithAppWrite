@@ -1,5 +1,7 @@
 footer {
-    min-height: 42vh;
+    min-height: 42.5vh;
+    width: 100%;
+    height: 100%;
     background-color: #161616;
     color: #fff;
     display: grid;
@@ -68,7 +70,6 @@ footer {
     }
 
     h2 {
-        display: block;
         font-size: 1.5em;
         margin-block-start: 0.83em;
         margin-block-end: 0.83em;

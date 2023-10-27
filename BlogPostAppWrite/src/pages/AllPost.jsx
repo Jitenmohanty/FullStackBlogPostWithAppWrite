@@ -11,7 +11,21 @@ function AllPosts() {
         }
     })
   return (
-    <div className='w-full py-8'>
+    <>
+    {
+        posts.length===0 &&  <div className="w-full height py-8 mt-4 text-center gredient ">
+        <Container>
+          <div className="flex flex-wrap">
+            <div className="p-2 w-full">
+              <h1 className="text-2xl font-bold ">
+                Posts are Loading....
+              </h1>
+            </div>
+          </div>
+        </Container>
+      </div>
+    }
+    <div className='w-full py-8 '>
         <Container>
             <div className='flex flex-wrap'>
                 {posts.map((post) => (
@@ -22,6 +36,7 @@ function AllPosts() {
             </div>
             </Container>
     </div>
+    </>
   )
 }
 

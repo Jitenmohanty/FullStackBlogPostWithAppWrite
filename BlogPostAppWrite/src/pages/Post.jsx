@@ -32,9 +32,9 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8 ">
+    <div className="py-8">
       <Container>
-      <div className="w-full flex flex-col md:flex-row justify-end mb-4 border rounded-xl p-2 shadow-md bg-amber-400 overflow-x-auto">
+      <div className="w-full height1 flex flex-col md:flex-row justify-end mb-4 border rounded-xl p-2 shadow-md bg-amber-400 overflow-x-auto ">
       <div className="will-change-auto md:w-48 sm:mr-8 relative">
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
@@ -68,5 +68,15 @@ export default function Post() {
     </div>
       </Container>
     </div>
-  ) : null;
+  ) : <div className="w-full height2 py-8 mt-4 text-center gredient ">
+  <Container>
+    <div className="flex flex-wrap">
+      <div className="p-2 w-full">
+        <h1 className="text-2xl font-bold ">
+        Posts are Loading....
+        </h1>
+      </div>
+    </div>
+  </Container>
+</div>;
 }
