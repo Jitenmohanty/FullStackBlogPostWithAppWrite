@@ -16,7 +16,7 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full height2 py-8 mt-4 text-center gredient ">
+      <div className="w-full h-[70vh] py-8 mt-4 text-center gredient ">
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
