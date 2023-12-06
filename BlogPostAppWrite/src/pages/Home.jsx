@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/service";
 import { Container, PostCard } from "../components";
-import "../App.css"
+import "../App.css";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -16,13 +16,11 @@ function Home() {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full h-[70vh] py-8 mt-4 text-center gredient ">
+      <div className="w-full h-[60vh] py-8 mt-4 text-center gredient ">
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold ">
-              Posts are Loading....
-              </h1>
+              <h1 className="text-2xl font-bold ">Posts are Loading....</h1>
             </div>
           </div>
         </Container>

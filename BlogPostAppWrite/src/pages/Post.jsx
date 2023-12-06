@@ -39,7 +39,7 @@ export default function Post() {
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
           alt={post.title}
-          className="rounded-t-xl md:rounded-xl w-48 h-48 md:h-auto object-cover"
+          className="rounded-t-xl md:rounded-xl w-48 h-48 md:max-h-52 object-cover"
         />
         {isAuthor && (
           <div className="absolute top-2 right-2 md:static md:mt-2">
@@ -68,7 +68,7 @@ export default function Post() {
     </div>
       </Container>
     </div>
-  ) : <div className="w-full height2 py-8 mt-4 text-center gredient ">
+  ) : <div className="w-full height2 py-8 sm:h-[50vh] h-[30vh] mt-4 text-center gredient ">
   <Container>
     <div className="flex flex-wrap">
       <div className="p-2 w-full">
